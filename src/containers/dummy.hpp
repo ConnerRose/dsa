@@ -1,3 +1,0 @@
-struct something {
-  int a;
-};
