@@ -1,3 +1,5 @@
+enable_testing()
+
 file(GLOB TEST_SOURCES "*.cpp")
 
 foreach(TEST_SOURCE ${TEST_SOURCES})
@@ -11,4 +13,6 @@ foreach(TEST_SOURCE ${TEST_SOURCES})
   else()
     target_compile_options(${TEST_NAME} PRIVATE -Wall -Wextra -Werror -pedantic -g -O3)
   endif()
+
+  add_test(NAME ${TEST_NAME} COMMAND ${TEST_NAME})
 endforeach()
